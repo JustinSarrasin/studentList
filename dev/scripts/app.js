@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import SingleStudent from './SingleStudent';
-import AddTag from './AddTag';
-
-
+// import AddTag from './AddTag';
 
 class App extends React.Component {
   constructor(){
@@ -12,9 +10,11 @@ class App extends React.Component {
     this.state = {
       students: [],
       value: '',
+      tagSearchValue: '',
       expand: true
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleTagChange = this.handleTagChange.bind(this);
     this.changeExpand = this.changeExpand.bind(this);
   }
 
@@ -22,7 +22,6 @@ class App extends React.Component {
     axios.get(`https://www.hatchways.io/api/assessment/students`, {
     })
       .then(({ data }) => {
-        // console.log(data.students);
         this.setState({
           students: data.students
         });
@@ -31,6 +30,10 @@ class App extends React.Component {
 
   handleChange(e) {
     this.setState({value: e.target.value})
+  }
+
+  handleTagChange(e) {
+    this.setState({tagSearchValue: e.target.value})
   }
 
   changeExpand(e){
@@ -42,16 +45,16 @@ class App extends React.Component {
     render() {
       let filteredName = this.state.students.filter((student) => {
         return student.firstName.toLowerCase().indexOf(this.state.value.toLowerCase()) !== -1 || student.lastName.toLowerCase().indexOf(this.state.value.toLowerCase()) !== -1;
-      })
+      });
+
       return (
         <div className='page'>
             <div className='wrapper'>
                 <input type="text" placeholder="Search by name" onChange={this.handleChange}/>
-                <input type="text" placeholder="Search by tag" onChange={this.handleChange}/>
+                <input type="text" placeholder="Search by tag" onChange={this.handleTagChange}/>
 
                 {filteredName.map((student, key) => {
-                  return <SingleStudent student={student} key={student.id} expand={this.changeExpand} /> 
-                  // <AddTag />
+                  return <SingleStudent student={student} key={student.id} expand={this.changeExpand} tagValue={this.state.tagSearchValue} studentsArray={this.state.students} /> 
                 })}
           </div>
         </div>

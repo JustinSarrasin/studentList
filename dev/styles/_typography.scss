@@ -2,15 +2,25 @@ h2 {
   font-size: 3.5rem;
   text-transform: uppercase;
   margin: 0;
-  // width: 80%;
-  // display: inline-block;
 }
 
 p {
   font-size: 1.7rem;
-  color: grey;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 i {
   font-size: 3.5rem;
+}
+
+input {
+  color: black;
+  font-weight: 300;
+}
+
+::placeholder {
+  color: black;
+  font-weight: 300;
 }

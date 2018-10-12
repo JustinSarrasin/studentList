@@ -10,23 +10,6 @@ export default class SingleStudent extends React.Component {
     }
   }
 
-// function Grades(){
-//   return <h2>test</h2>;
-// }
-// function userGreeting(){
-//   return <h1>test</h1>
-// }
-
-// changeExpand(props) {
-//   // let isClicked = this.state.expand;
-//   // let addTag;
-//   // if(isClicked){
-//   //   addTag = <AddTag />
-//   // } else {
-//   //   return <h1>hello</h1>
-//   // }
-// }
-
   render() {
     let grades = this.props.student.grades;
     let numGrades = grades.map(Number);
@@ -39,12 +22,6 @@ export default class SingleStudent extends React.Component {
       })
       avg = sum/numGrades.length;
     }
-
-    // let isClicked = this.state.expand;
-    // let addTag;
-    //   if (isClicked) {
-    //     addTag = <AddTag />
-    //   } 
 
     return (
       <div className='studentContainer'>
@@ -65,13 +42,13 @@ export default class SingleStudent extends React.Component {
               <p>Email: {this.props.student.email}</p>
               <p>Company: {this.props.student.company}</p>
               <p>Skill: {this.props.student.skill}</p>
-              <p>Average: {avg} </p>
+              <p>Average: {avg}% </p>
 
               {grades.map((grade, i) => {
-                return <TestResults grade={grade} clicked={this.state.expand} index={i + 1}/>
+                return <TestResults grade={grade} clicked={this.state.expand} index={i + 1} key={i}/>
               })}
 
-              {!this.state.expand ? <AddTag /> : null}
+              {!this.state.expand ? <AddTag tagValue={this.props.tagValue} students={this.props.studentsArray}/> : null}
             </div>
         </div>
       </div>
