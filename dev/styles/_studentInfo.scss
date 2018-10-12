@@ -1,0 +1,54 @@
+.page {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.singleStudentContainer {
+  display: flex;
+  width: 85%;
+  margin: 25px auto;
+}
+
+.studentContainer {
+  border-bottom: 1px solid lightgray;
+  img {
+    width: 20%;
+    height: 20%;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+  }
+}
+
+.studentInfo {
+  margin-left: 25px;
+  width: 100%;
+  p {
+    margin: 5px 30px;
+    color: red;
+  }
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: space-between;
+  button {
+    background-color: transparent;
+    border: transparent;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  width: 100%;
+  font-size: 3rem;
+}
+
+span {
+  margin-left: 20px;
+}

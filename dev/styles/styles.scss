@@ -1,0 +1,25 @@
+@import '_setup';
+@import '_typography';
+@import '_studentInfo';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  max-height: 80vh;
+  min-height: 80vh;
+  width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid rgba(211, 211, 211, 0.637);
+  border-radius: 8px;
+}
