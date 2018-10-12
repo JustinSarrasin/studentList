@@ -17,6 +17,8 @@
   img {
     width: 20%;
     height: 20%;
+    transform: translateY(10%);
+    // margin: 50px auto;
     border: 1px solid lightgray;
     border-radius: 50%;
   }
@@ -27,7 +29,6 @@
   width: 100%;
   p {
     margin: 5px 30px;
-    color: red;
   }
 }
 
@@ -47,8 +48,18 @@ button:focus {
 input {
   width: 100%;
   font-size: 3rem;
+  border: none;
+  border-bottom: 1px solid lightgrey;
 }
+
 
 span {
   margin-left: 20px;
 }
+
+.addTag {
+  font-size: 1.7rem;
+  width: 30%;
+  margin: 50px 25px 0;
+}
+
