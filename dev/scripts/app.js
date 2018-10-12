@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import SingleStudent from './SingleStudent';
-// import AddTag from './AddTag';
 
 class App extends React.Component {
   constructor(){
@@ -38,8 +37,8 @@ class App extends React.Component {
 
   changeExpand(e){
     this.setState(prevState => ({
-    expand: !prevState.check
-   }))
+      expand: !prevState.check
+    }))
   }
 
     render() {
@@ -47,6 +46,10 @@ class App extends React.Component {
         return student.firstName.toLowerCase().indexOf(this.state.value.toLowerCase()) !== -1 || student.lastName.toLowerCase().indexOf(this.state.value.toLowerCase()) !== -1;
       });
 
+      // this.state.students.map((student, i) => {
+      //   return student.tag = [];
+      // })
+ 
       return (
         <div className='page'>
             <div className='wrapper'>
